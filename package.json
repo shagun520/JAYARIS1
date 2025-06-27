@@ -1,8 +1,7 @@
 {
-  "homepage": "https://<shagun520>.github.io/<JAYARIS1>",
-
   "name": "jayaris-homepage",
   "version": "0.1.0",
+  "homepage": "https://shagun520.github.io/JAYARIS1",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
@@ -20,12 +19,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-  "start": "react-scripts start",
-  "build": "react-scripts build",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build"
-}
-,
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -43,8 +41,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages": "^6.3.0"
   }
 }
