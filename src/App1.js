@@ -9,13 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Lottie from "lottie-react";
 import { useEffect, useState } from "react";
 import Tilt from "react-parallax-tilt";
-/*SPECIALIZATION LOTTIE*/
-import supportIcon from "./image/star.json";
-import resultsIcon from "./image/star.json";
-import speedIcon from "./image/star.json";
-import securityIcon from "./image/star.json";
-import teamIcon from "./image/star.json";
-import globalIcon from "./image/star.json";
+
 import {
   FaFacebook,
 
@@ -28,12 +22,6 @@ import "./App1.css";
 import client1 from './image/client1.jpeg';
 import client2 from './image/client2.jpeg';
 import client3 from './image/client3.jpeg';
-
-import lottie1 from './image/lb1.json';
-import lottie3 from './image/lightbulb.json';
-import globeAnim from './image/orbit.json';
-import lottie2 from './image/rocket.json';
-import lottie4 from './image/why.json';
 import starAnim from './image/star.json';
 const points = ["Global Delivery", "Top Talent", "Agile Execution", "Post-Delivery Support"];
 
@@ -317,32 +305,32 @@ const serviceData = [
   {
     title: "We're with you Always",
     desc: "Our work doesn’t end at delivery. We offer ongoing support, updates, and enhancements through flexible post-launch service plans tailored to your evolving needs.",
-    icon: supportIcon,
+     icon: require('./image/help.png')
   },
   {
     title: "Built for Real Results",
     desc: "Responsive and modern websites using the latest tech. Optimized for speed, SEO, and cross-browser compatibility.",
-    icon: resultsIcon,
+     icon: require('./image/results.png')
   },
   {
     title: "Fast Flexible & Future Ready",
     desc: "We work smart and fast. Whether you’re a startup or an enterprise, our flexible methods help us shape your ideas into powerful digital products that grow with you.",
-    icon: speedIcon,
+     icon: require('./image/stopwatch.png')
   },
   {
     title: "Safe & Secure, From Start to Finish",
     desc: "Your data, your business—always protected. We follow strict security practices so you can work with peace of mind.",
-    icon: securityIcon,
+     icon: require('./image/cyber-security.png')
   },
   {
     title: "A team of experts",
     desc: "Our people are our power. Every member of our team—from developers to designers—is handpicked for their talent, creativity, and commitment to delivering the best.",
-    icon: teamIcon,
+     icon: require('./image/leadership.png')
   },
   {
     title: "Global Quality, World's Brilliance",
     desc: "We bring together the precision of international standards with the passion and skill of the world’s brightest minds to deliver top-quality digital solutions.",
-    icon: globalIcon,
+     icon: require('./image/award.png')
   },
 ];
 
@@ -419,125 +407,52 @@ const serviceData = [
   </Container>
 </section>
 
-  {/* --- SPECIALIZATION SECTION SLIDES UP --- */}
+ {/* --- SPECIALIZATION SECTION SLIDES UP --- */}
 <section id="services" className="specialization-section-wrapper">
   <motion.div
-    className="main-special-heading text-center mb-5"
+    className="main-special-heading mb-5"
     initial={{ opacity: 0, y: -30 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 1 }}
   >
-    <AnimatedHeadingLine text="what sets us apart?" />
+    <h2 className="specialization-heading">
+      <span className="animated-text">What sets Us apart?</span>
+    </h2>
   </motion.div>
 
   <motion.div
-  className="glass-grid-container"
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
->
-  {serviceData.map((card, index) => (
-    <Tilt
-      key={index}
-      tiltMaxAngleX={10}
-      tiltMaxAngleY={10}
-      glareEnable={false}
-      className="tilt-wrapper"
-    >
-      <motion.div
-        className="glass-card text-center"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+    className="glass-grid-container"
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
+  >
+    {serviceData.map((card, index) => (
+      <Tilt
+        key={index}
+        tiltMaxAngleX={10}
+        tiltMaxAngleY={10}
+        glareEnable={false}
+        className="tilt-wrapper"
       >
-        <Lottie animationData={card.icon} loop={true} className="icon-lottie mb-3" />
-        <h5 className="fw-bold mb-2">{card.title}</h5>
-        <p>{card.desc}</p>
-      </motion.div>
-    </Tilt>
-  ))}
-</motion.div>
-
+        <motion.div
+          className="glass-card text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+        >
+          {/* PNG Icon */}
+          <img src={card.icon} alt="icon" className="icon-png mb-3" />
+          <h5 className="fw-bold mb-2">{card.title}</h5>
+          <p>{card.desc}</p>
+        </motion.div>
+      </Tilt>
+    ))}
+  </motion.div>
 </section>
 
-<div className="why-jayaris-wrapper position-relative">
-  {/* Center BG Lottie */}
-  <motion.div
-    className="orbit-bg-lottie"
-    initial={{ opacity: 0, scale: 0.8 }}
-    whileInView={{ opacity: 0.07, scale: 1 }}
-    transition={{ duration: 1.2 }}
-    viewport={{ once: true }}
-  >
-    <Lottie animationData={globeAnim} loop />
-  </motion.div>
 
-  {/* Flying Lotties */}
-  {[
-    { className: "lottie1", anim: lottie1, x: [0, 30, -20, 0], y: [0, -20, 10, 0], dur: 12 },
-    { className: "lottie2", anim: lottie2, x: [0, -40, 20, 0], y: [0, 30, -10, 0], dur: 13 },
-    { className: "lottie3", anim: lottie3, x: [0, 25, -25, 0], y: [0, -25, 10, 0], dur: 14 },
-    { className: "lottie4", anim: lottie4, x: [0, -30, 30, 0], y: [0, 20, -20, 0], dur: 15 }
-  ].map((item, idx) => (
-    <motion.div
-      key={idx}
-      className={`floating-lottie ${item.className}`}
-      initial={{ opacity: 0, scale: 0.8 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.8, delay: 0.4 + idx * 0.15, ease: "easeOut" }}
-      viewport={{ once: true, amount: 0.3 }}
-      animate={{ x: item.x, y: item.y }}
-    >
-      <Lottie animationData={item.anim} loop />
-    </motion.div>
-  ))}
 
-  {/* Main Text Section */}
-  <section
-    id="why-jayaris-slide"
-    className="why-jayaris-slide-section d-flex align-items-center justify-content-center text-center"
-  >
-    <motion.div
-      className="why-jayaris-content px-4"
-      initial="hidden"
-      whileInView="visible"
-      variants={{
-        visible: {
-          transition: {
-            staggerChildren: 1
-          }
-        }
-      }}
-      viewport={{ once: true, amount: 0.4 }}
-    >
-      <motion.h2
-        className="mb-4"
-        variants={{
-          hidden: { opacity: 0, y: 40, filter: "blur(8px)" },
-          visible: { opacity: 1, y: 0, filter: "blur(0px)" }
-        }}
-        transition={{ duration: 0.4 }}
-      >
-        and you wonder why <span className="fw-bold">Jayaris?</span>
-      </motion.h2>
-
-      <AnimatedLine
-  text={
-    <>
-      because it offers more than just development — we back every build with <strong>post-delivery support</strong>,
-      ensuring your product stays stable, updated, and ready for what's next. with <strong>global delivery</strong>, we bring
-      your solution to life no matter where you are, offering <strong>seamless collaboration</strong> across time zones.
-      our <strong>agile execution</strong> keeps you in control, with transparent sprints, fast iterations, and room for evolving needs.
-      and with access to <strong>top talent</strong>, you're not just hiring developers — you're partnering with innovators who care about impact.
-      in short, we don’t just build — we stay, scale, and evolve with you.
-    </>
-  }
-/>
-
-    </motion.div>
-  </section>
-</div>
 
 {/* Testimonial Section */}
 <motion.section className="testimonial-glass-section" id="testimonials">
