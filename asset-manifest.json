@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/JAYARIS1/static/css/main.9095665e.css",
-    "main.js": "/JAYARIS1/static/js/main.331fcf99.js",
+    "main.css": "/JAYARIS1/static/css/main.233b38bf.css",
+    "main.js": "/JAYARIS1/static/js/main.0e0e0422.js",
     "static/media/earthbg.mp4": "/JAYARIS1/static/media/earthbg.7a34203da2f61a6b4faa.mp4",
     "static/media/client2.jpeg": "/JAYARIS1/static/media/client2.22bc2bffac0d9ae07700.jpeg",
+    "static/media/logo.png": "/JAYARIS1/static/media/logo.b70fd411c808c1328089.png",
     "static/media/results.png": "/JAYARIS1/static/media/results.18e68cee5af4d73b4843.png",
     "static/media/client3.jpeg": "/JAYARIS1/static/media/client3.e854a9c545bfffb1acf4.jpeg",
     "static/media/help.png": "/JAYARIS1/static/media/help.38f0bd28f5789bdbfe62.png",
@@ -13,11 +14,11 @@
     "static/media/client1.jpeg": "/JAYARIS1/static/media/client1.03eb73ef626f79c870ac.jpeg",
     "static/media/award.png": "/JAYARIS1/static/media/award.8889805b329a083c68b9.png",
     "index.html": "/JAYARIS1/index.html",
-    "main.9095665e.css.map": "/JAYARIS1/static/css/main.9095665e.css.map",
-    "main.331fcf99.js.map": "/JAYARIS1/static/js/main.331fcf99.js.map"
+    "main.233b38bf.css.map": "/JAYARIS1/static/css/main.233b38bf.css.map",
+    "main.0e0e0422.js.map": "/JAYARIS1/static/js/main.0e0e0422.js.map"
   },
   "entrypoints": [
-    "static/css/main.9095665e.css",
-    "static/js/main.331fcf99.js"
+    "static/css/main.233b38bf.css",
+    "static/js/main.0e0e0422.js"
   ]
 }
