@@ -1,17 +1,23 @@
 {
   "files": {
-    "main.css": "/JAYARIS1/static/css/main.856037a4.css",
-    "main.js": "/JAYARIS1/static/js/main.c32410d8.js",
+    "main.css": "/JAYARIS1/static/css/main.2344e3d3.css",
+    "main.js": "/JAYARIS1/static/js/main.5c8dd20b.js",
     "static/media/earthbg.mp4": "/JAYARIS1/static/media/earthbg.7a34203da2f61a6b4faa.mp4",
     "static/media/client2.jpeg": "/JAYARIS1/static/media/client2.22bc2bffac0d9ae07700.jpeg",
+    "static/media/results.png": "/JAYARIS1/static/media/results.18e68cee5af4d73b4843.png",
     "static/media/client3.jpeg": "/JAYARIS1/static/media/client3.e854a9c545bfffb1acf4.jpeg",
+    "static/media/help.png": "/JAYARIS1/static/media/help.38f0bd28f5789bdbfe62.png",
+    "static/media/leadership.png": "/JAYARIS1/static/media/leadership.128a836daf4cdd88b9fc.png",
+    "static/media/stopwatch.png": "/JAYARIS1/static/media/stopwatch.a61c3df49790984ab201.png",
+    "static/media/cyber-security.png": "/JAYARIS1/static/media/cyber-security.5c78cb80c11bc803a84d.png",
     "static/media/client1.jpeg": "/JAYARIS1/static/media/client1.03eb73ef626f79c870ac.jpeg",
+    "static/media/award.png": "/JAYARIS1/static/media/award.8889805b329a083c68b9.png",
     "index.html": "/JAYARIS1/index.html",
-    "main.856037a4.css.map": "/JAYARIS1/static/css/main.856037a4.css.map",
-    "main.c32410d8.js.map": "/JAYARIS1/static/js/main.c32410d8.js.map"
+    "main.2344e3d3.css.map": "/JAYARIS1/static/css/main.2344e3d3.css.map",
+    "main.5c8dd20b.js.map": "/JAYARIS1/static/js/main.5c8dd20b.js.map"
   },
   "entrypoints": [
-    "static/css/main.856037a4.css",
-    "static/js/main.c32410d8.js"
+    "static/css/main.2344e3d3.css",
+    "static/js/main.5c8dd20b.js"
   ]
 }
