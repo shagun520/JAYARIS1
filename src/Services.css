@@ -1,50 +1,4 @@
 
-.glass-navbar {
-  background: rgba(0, 0, 0, 0.3) !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  z-index: 9999; /* must be higher than the video */
-  position: fixed; /* stays on top */
-  top: 0;
-  width: 100%;
-}
-
-.navbar .nav-link {
-  color: #ffffff !important;
-  font-weight: 500;
-  margin: 0 10px;
-  transition: color 0.3s ease;
-}
-
-.navbar .nav-link:hover {
-  color: #606dc5 !important;
-}
-
-.signup-btn {
-  background-color: #33396d;
-  color: #ffffff !important;
-  font-weight: 600;
-  text-transform: lowercase;
-  padding: 4px 12px;
-  border: none !important;
-  border-radius: 8px;
-}
-
-.language-toggle {
-  font-weight: 500;
-  color: white !important;
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-.btn-outline-light:hover {
-  background-color: #33396d;
-  color: #ffffff;
-}
 /* Navbar styles (from your original code) */
 .glass-navbar {
   background: rgba(0, 0, 0, 0.3) !important;
@@ -92,7 +46,28 @@
   background-color: #33396d;
   color: #ffffff;
 }
+.navbar-brand img {
+  height: 2.9rem; /* Adjust height using rem for responsiveness */
+  width: auto;   /* Maintain aspect ratio */
+  vertical-align: middle; /* Ensure it aligns nicely with text */
+  margin-right: 0.5rem; /* Space between logo and text */
+}
 
+/* You might want to adjust the Navbar.Brand font size if the logo is large */
+.navbar-brand .fw-bold {
+  font-size: 1.5rem; /* Example: adjust brand text size */
+}
+
+/* Adjust for smaller screens if needed */
+@media (max-width: 991.98px) { /* Adjust breakpoint to match your navbar.expand="lg" */
+  .navbar-brand img {
+    height: 1.8rem; /* Slightly smaller logo on mobile */
+    margin-right: 0.3rem;
+  }
+  .navbar-brand .fw-bold {
+    font-size: 1.3rem;
+  }
+}
 /* ===== Base Styles for Services Section ===== */
 /* ... existing navbar styles ... */
 /* ... existing navbar styles ... */
@@ -117,7 +92,7 @@
   font-weight: 700;
   text-align: center;
   margin: 1.2rem 0 0.8rem; /* Further reduced top and bottom margin */
-  background: linear-gradient(90deg, #64588ddb, #404143);
+  background: linear-gradient(90deg, #d8d5e0db, #5276be);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -175,12 +150,16 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-
+  
   padding: 1rem;
-  color: #fff;
+  color: #ffffff;
   cursor: pointer;
 }
-
+.service-card h5 {
+  font-size: 1.7rem; /* Adjust this value as needed (e.g., 1.2rem, 1.4rem, 0.9rem) */
+  margin: 0; /* Remove default margin from h5 if present */
+  line-height: 1.2; /* Adjust line-height for better spacing if needed */
+}
 /* Center card visual styling (no transforms here, just other styles) */
 .service-card.center {
   background: linear-gradient(to bottom right, rgba(106, 90, 205, 0.2), rgba(30, 30, 60, 0.4));

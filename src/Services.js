@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Container, Nav, Navbar, Button, Dropdown } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import React, { useState, useRef, useLayoutEffect, useCallback, useMemo, useEffect } from "react"; // Import useEffect
-
+import logoImage from './image/logo.png';
 const servicesData = [
   { title: "Web Development", description: "We build fast, secure, and beautifully designed websites that make you stand out online." },
   { title: "App Development", description: "From Android to iOS, we create mobile apps that are smooth, powerful, and user-friendly." },
@@ -190,34 +190,63 @@ const Services = () => {
 
   return (
     <>
+      <motion.div
+      initial={{ opacity: 0, y: -30, filter: "blur(8px)" }}
+      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      transition={{ duration: 1.2, ease: "easeOut", delay: 0.5 }}
+      style={{ position: 'fixed', width: '100%', zIndex: 9999 }}
+    >
       <Navbar expand="lg" fixed="top" className="glass-navbar px-4">
         <Container fluid className="d-flex justify-content-between align-items-center">
-          <Navbar.Brand className="fw-bold text-white">Jayaris</Navbar.Brand>
-          <Nav className="mx-auto">
-            <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/about">About</Nav.Link>
-            <Nav.Link as={Link} to="/services">Services</Nav.Link>
-            <Nav.Link href="#blogs">Testimonials</Nav.Link>
-            <Nav.Link href="#contact">Career</Nav.Link>
-            <Nav.Link href="#contact">Contact Us</Nav.Link>
-          </Nav>
-          <div className="d-flex align-items-center gap-3">
-            <Button variant="outline-light" size="sm" className="signup-btn">
-              Signup/Signin
-            </Button>
-            <Dropdown align="end">
-              <Dropdown.Toggle variant="outline-light" size="sm" className="language-toggle d-flex align-items-center">
-                <span className="me-1">🌐</span> En
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                <Dropdown.Item>English</Dropdown.Item>
-                <Dropdown.Item>हिन्दी</Dropdown.Item>
-                <Dropdown.Item>Français</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-          </div>
-        </Container>
-      </Navbar>
+
+          {/* Left: Jayaris Brand - UPDATED */}
+          <Navbar.Brand as={Link} to="/" className="d-flex align-items-center"> {/* Added as={Link} to="/" and d-flex for alignment */}
+            <img
+              src={logoImage} // Use the imported image
+              width="30" // Initial width, will adjust with CSS
+              height="30" // Initial height, will adjust with CSS
+              className="d-inline-block align-top me-2" // Bootstrap classes for inline-block, vertical alignment, and right margin
+              alt="Jayaris Logo"
+            />
+            <span className="fw-bold text-white">Jayaris</span> {/* Keep the text next to it */}
+          </Navbar.Brand>
+
+          {/* Toggler for mobile */}
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+
+          {/* Collapsible content */}
+          <Navbar.Collapse id="responsive-navbar-nav">
+            {/* Center: Nav Links */}
+            <Nav className="mx-auto">
+              <Nav.Link as={Link} to="/">Home</Nav.Link>
+              <Nav.Link as={Link} to="/about">About</Nav.Link>
+              <Nav.Link as={Link} to="/services">Services</Nav.Link>
+              <Nav.Link href="#blogs">Testimonials</Nav.Link>
+              <Nav.Link href="#contact">Career</Nav.Link>
+              <Nav.Link href="#contact">Contact Us</Nav.Link>
+            </Nav>
+
+            {/* Right: Signup + Language - these will also collapse */}
+            <div className="d-flex align-items-center gap-3 ms-lg-auto">
+              <Button variant="outline-light" size="sm" className="signup-btn">
+                Signup/Signin
+              </Button>
+              <Dropdown align="end">
+                <Dropdown.Toggle variant="outline-light" size="sm" className="language-toggle d-flex align-items-center">
+                  <span className="me-1">🌐</span> En
+                </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item>English</Dropdown.Item>
+                    <Dropdown.Item>हिन्दी</Dropdown.Item>
+                    <Dropdown.Item>Français</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </div>
+            </Navbar.Collapse>
+
+          </Container>
+        </Navbar>
+      </motion.div>
 
       <section
         className="services-carousel-section"
@@ -275,6 +304,7 @@ const Services = () => {
           <Button variant="outline-light" onClick={() => handleSwipe("left")}>&gt;</Button>
         </div>
       </section>
+      
     </>
   );
 };

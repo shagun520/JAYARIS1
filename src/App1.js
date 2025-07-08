@@ -6,13 +6,13 @@ import { Container, Nav, Navbar, Button, Dropdown, Row, Col } from "react-bootst
 import bgVideo from './image/earthbg.mp4';
 import { Typewriter } from 'react-simple-typewriter';
 import "bootstrap/dist/css/bootstrap.min.css";
-import Lottie from "lottie-react";
 import { useEffect, useState } from "react";
 import Tilt from "react-parallax-tilt";
 import { Routes, Route } from 'react-router-dom';
 import Services from './Services';
 import AboutUs from './aboutus';
 import { Link } from 'react-router-dom';
+import logoImage from './image/logo.png';
 import {
   FaFacebook,
 
@@ -25,7 +25,6 @@ import "./App1.css";
 import client1 from './image/client1.jpeg';
 import client2 from './image/client2.jpeg';
 import client3 from './image/client3.jpeg';
-import starAnim from './image/star.json';
 const points = ["Global Delivery", "Top Talent", "Agile Execution", "Post-Delivery Support"];
 
 const feedbackList = [
@@ -48,200 +47,7 @@ const feedbackList = [
    feedback: "Working with Jayaris was like expanding our core tech team without the overhead. They delivered scalable architecture, handled tight deadlines with ease, and brought valuable suggestions during every sprint. Highly dependable and efficient."
   }
 ];
-
-
-const AnimatedHeading = ({ text }) => {
-  const words = text.split(" ");
-
-  return (
-    <motion.h2
-      className="text-center mb-5"
-      initial="hidden"
-      whileInView="visible"
-      variants={{
-        visible: {
-          transition: {
-            staggerChildren: 0.15
-          }
-        }
-      }}
-      viewport={{ once: true, amount: 0.7 }}
-    >
-      {words.map((word, idx) => (
-        <motion.span
-          key={idx}
-          variants={{
-            hidden: { opacity: 0, y: 20, filter: "blur(10px)" },
-            visible: { opacity: 1, y: 0, filter: "blur(0px)" }
-          }}
-          transition={{ duration: 0.3 }}
-          style={{ display: "inline-block", marginRight: "0.4ch" }}
-        >
-          {word}
-        </motion.span>
-      ))}
-    </motion.h2>
-  );
-};
-const AnimatedHeadingLine = ({ text }) => {
-  const elements = [];
-
-  if (typeof text === "string") {
-    text.split(" ").forEach((word, idx) => {
-      elements.push({ content: word, bold: false, key: idx });
-    });
-  } else {
-    let key = 0;
-    React.Children.forEach(text, (child) => {
-      if (typeof child === "string") {
-        child.split(" ").forEach((word) =>
-          elements.push({ content: word, bold: false, key: key++ })
-        );
-      } else if (child.type === "strong") {
-        const words = child.props.children.split(" ");
-        words.forEach((word) =>
-          elements.push({ content: word, bold: true, key: key++ })
-        );
-      }
-    });
-  }
-
-  return (
-    <motion.h2
-      className="text-white text-center fw-bold position-relative mb-5"
-      style={{
-        fontSize: "2.8rem",
-        color: "#fff",
-        textShadow: "0 0 5px rgba(255,255,255,0.2)"
-      }}
-      initial="hidden"
-      whileInView="visible"
-      variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
-      viewport={{ once: true, amount: 0.5 }}
-    >
-      {elements.map(({ content, bold, key }) => (
-        <motion.span
-          key={key}
-          variants={{
-            hidden: { opacity: 0, y: 10, filter: "blur(6px)" },
-            visible: { opacity: 1, y: 0, filter: "blur(0px)" }
-          }}
-          transition={{ duration: 0.3 }}
-          style={{
-            display: "inline-block",
-            marginRight: "0.4ch",
-            fontWeight: bold ? "bold" : "normal"
-          }}
-        >
-          {content}
-        </motion.span>
-      ))}
-    </motion.h2>
-  );
-};
-
-const AnimatedLine = ({ text }) => {
-  const elements = [];
-
-  const processNode = (node, isBold = false) => {
-    if (typeof node === "string") {
-      node.split(" ").forEach((word, idx) => {
-        elements.push({ content: word, bold: isBold, key: elements.length });
-      });
-    } else if (React.isValidElement(node)) {
-      const isStrong = node.type === "strong";
-      React.Children.forEach(node.props.children, child =>
-        processNode(child, isBold || isStrong)
-      );
-    }
-  };
-
-  processNode(text);
-
- return (
-  <motion.h2
-    className="text-dark text-center position-relative mb-5"
-    style={{ fontSize: "1.399rem", fontWeight: 500, lineHeight: 1.4 }}
-    initial="hidden"
-    whileInView="visible"
-    variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
-    viewport={{ once: true, amount: 0.5 }}
-  >
-    {elements.map(({ content, bold, key }) => (
-      <motion.span
-        key={key}
-        variants={{
-          hidden: { opacity: 0, y: 10, filter: "blur(6px)" },
-          visible: { opacity: 1, y: 0, filter: "blur(0px)" }
-        }}
-        transition={{ duration: 0.3 }}
-        style={{
-          display: "inline-block",
-          marginRight: "0.4ch",
-          fontWeight: bold ? 600 : 400
-        }}
-      >
-        {content}
-      </motion.span>
-    ))}
-  </motion.h2>
-);
-
-};
-
-
  
-const ServicePoint = ({ title, description, position,expand = "right"  }) => {
-  const [hovered, setHovered] = useState(false);
-  const [typedText, setTypedText] = useState("");
-
-  useEffect(() => {
-    if (!hovered) return;
-    let i = 0;
-    const interval = setInterval(() => {
-      setTypedText(description.slice(0, i + 1));
-      i++;
-      if (i >= description.length) clearInterval(interval);
-    }, 35);
-    return () => clearInterval(interval);
-  }, [hovered, description]);
-
-  return (
-    <motion.div
-      className="service-point position-absolute d-flex align-items-start"
-      style={{ ...position }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-    >
-      <div style={{ width: 32, marginRight: 10 }}>
-        <Lottie
-  animationData={starAnim}
-  loop
-  style={{ width: "90px", height: "90px", marginLeft: "-10px", marginTop:"-30px"}} // increase size here
-/>
-      </div>
-      <div>
-        <h5 className="text-white fw-bold mb-1">{title}</h5>
-        {hovered && (
-          <motion.p
-  className={`service-description mt-1 px-3 py-2 ${expand === "left" ? "expand-left" : ""}`}
-  initial={{ opacity: 0, y: 10 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.3 }}
->
-  {typedText}
-</motion.p>
-
-        )}
-      </div>
-    </motion.div>
-  );
-};
-
 function HomePage() {
 
   const [showNavbar, setShowNavbar] = useState(false);
@@ -339,51 +145,63 @@ const serviceData = [
 
   return (
     <>
-    <motion.div
-  initial={{ opacity: 0, y: -30, filter: "blur(8px)" }}
-  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-  transition={{ duration: 1.2, ease: "easeOut", delay: 0.5 }} // optional delay
-  style={{ position: 'fixed', width: '100%', zIndex: 9999 }} // make sure it's fixed & visible
->
-<Navbar expand="lg" fixed="top" className="glass-navbar px-4">
-  
-    <Container fluid className="d-flex justify-content-between align-items-center">
-      
-      {/* Left: Jayaris Brand */}
-      <Navbar.Brand className="fw-bold text-white">Jayaris</Navbar.Brand>
+     <motion.div
+      initial={{ opacity: 0, y: -30, filter: "blur(8px)" }}
+      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      transition={{ duration: 1.2, ease: "easeOut", delay: 0.5 }}
+      style={{ position: 'fixed', width: '100%', zIndex: 9999 }}
+    >
+      <Navbar expand="lg" fixed="top" className="glass-navbar px-4">
+        <Container fluid className="d-flex justify-content-between align-items-center">
 
-      {/* Center: Nav Links */}
-      <Nav className="mx-auto">
-        <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link as={Link} to="/about">About</Nav.Link>
-        <Nav.Link as={Link} to="/services">Services</Nav.Link>
-        <Nav.Link href="#blogs">Testimonials</Nav.Link>
-        <Nav.Link href="#contact">Career</Nav.Link>
-        <Nav.Link href="#contact">Contact Us</Nav.Link>
-      </Nav>
+          {/* Left: Jayaris Brand - UPDATED */}
+          <Navbar.Brand as={Link} to="/" className="d-flex align-items-center"> {/* Added as={Link} to="/" and d-flex for alignment */}
+            <img
+              src={logoImage} // Use the imported image
+              width="30" // Initial width, will adjust with CSS
+              height="30" // Initial height, will adjust with CSS
+              className="d-inline-block align-top me-2" // Bootstrap classes for inline-block, vertical alignment, and right margin
+              alt="Jayaris Logo"
+            />
+            <span className="fw-bold text-white">Jayaris</span> {/* Keep the text next to it */}
+          </Navbar.Brand>
 
-      {/* Right: Signup + Language */}
-      <div className="d-flex align-items-center gap-3">
-        <Button variant="outline-light" size="sm" className="signup-btn">
-          Signup/Signin
-        </Button>
-        <Dropdown align="end">
-          <Dropdown.Toggle variant="outline-light" size="sm" className="language-toggle d-flex align-items-center">
-            <span className="me-1">🌐</span> En
-          </Dropdown.Toggle>
-          <Dropdown.Menu>
-            <Dropdown.Item>English</Dropdown.Item>
-            <Dropdown.Item>हिन्दी</Dropdown.Item>
-            <Dropdown.Item>Français</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-      </div>
+          {/* Toggler for mobile */}
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
-    </Container>
- 
-</Navbar>
- </motion.div>
+          {/* Collapsible content */}
+          <Navbar.Collapse id="responsive-navbar-nav">
+            {/* Center: Nav Links */}
+            <Nav className="mx-auto">
+              <Nav.Link as={Link} to="/">Home</Nav.Link>
+              <Nav.Link as={Link} to="/about">About</Nav.Link>
+              <Nav.Link as={Link} to="/services">Services</Nav.Link>
+              <Nav.Link href="#blogs">Testimonials</Nav.Link>
+              <Nav.Link href="#contact">Career</Nav.Link>
+              <Nav.Link href="#contact">Contact Us</Nav.Link>
+            </Nav>
 
+            {/* Right: Signup + Language - these will also collapse */}
+            <div className="d-flex align-items-center gap-3 ms-lg-auto">
+              <Button variant="outline-light" size="sm" className="signup-btn">
+                Signup/Signin
+              </Button>
+              <Dropdown align="end">
+                <Dropdown.Toggle variant="outline-light" size="sm" className="language-toggle d-flex align-items-center">
+                  <span className="me-1">🌐</span> En
+                </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item>English</Dropdown.Item>
+                    <Dropdown.Item>हिन्दी</Dropdown.Item>
+                    <Dropdown.Item>Français</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </div>
+            </Navbar.Collapse>
+
+          </Container>
+        </Navbar>
+      </motion.div>
       <section className="hero d-flex align-items-center position-relative" id="home">
   {/* background video */}
  <video

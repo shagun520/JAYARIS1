@@ -60,6 +60,28 @@ a {
   background-color: #33396d;
   color: #ffffff;
 }
+.navbar-brand img {
+  height: 2.9rem; /* Adjust height using rem for responsiveness */
+  width: auto;   /* Maintain aspect ratio */
+  vertical-align: middle; /* Ensure it aligns nicely with text */
+  margin-right: 0.5rem; /* Space between logo and text */
+}
+
+/* You might want to adjust the Navbar.Brand font size if the logo is large */
+.navbar-brand .fw-bold {
+  font-size: 1.5rem; /* Example: adjust brand text size */
+}
+
+/* Adjust for smaller screens if needed */
+@media (max-width: 991.98px) { /* Adjust breakpoint to match your navbar.expand="lg" */
+  .navbar-brand img {
+    height: 1.8rem; /* Slightly smaller logo on mobile */
+    margin-right: 0.3rem;
+  }
+  .navbar-brand .fw-bold {
+    font-size: 1.3rem;
+  }
+}
 
 /* Hero Section */
 .hero {
