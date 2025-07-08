@@ -1,13 +1,11 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import HomePage from './App1';
-import './App1.css';
-import './index.css';
+import App1 from './App1';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <HomePage />
-  </React.StrictMode>
+  <BrowserRouter>
+    <App1 />
+  </BrowserRouter>
 );

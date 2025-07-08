@@ -9,7 +9,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Lottie from "lottie-react";
 import { useEffect, useState } from "react";
 import Tilt from "react-parallax-tilt";
-
+import { Routes, Route } from 'react-router-dom';
+import Services from './Services';
+import AboutUs from './aboutus';
+import { Link } from 'react-router-dom';
 import {
   FaFacebook,
 
@@ -239,7 +242,7 @@ const ServicePoint = ({ title, description, position,expand = "right"  }) => {
   );
 };
 
-export default function HomePage() {
+function HomePage() {
 
   const [showNavbar, setShowNavbar] = useState(false);
 
@@ -352,8 +355,8 @@ const serviceData = [
       {/* Center: Nav Links */}
       <Nav className="mx-auto">
         <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="#about">About</Nav.Link>
-        <Nav.Link href="#services">Services</Nav.Link>
+        <Nav.Link as={Link} to="/about">About</Nav.Link>
+        <Nav.Link as={Link} to="/services">Services</Nav.Link>
         <Nav.Link href="#blogs">Testimonials</Nav.Link>
         <Nav.Link href="#contact">Career</Nav.Link>
         <Nav.Link href="#contact">Contact Us</Nav.Link>
@@ -526,5 +529,15 @@ const serviceData = [
         </Container>
       </footer>
     </>
+  );
+}
+export default function App1() {
+  return (
+    <Routes>
+      <Route path="/JAYARIS1" element={<HomePage />} /> 
+      <Route path="/" element={<HomePage />} />
+      <Route path="/services" element={<Services />} />
+      <Route path="/about" element={<AboutUs />} />
+    </Routes>
   );
 }

@@ -1,0 +1,281 @@
+
+.glass-navbar {
+  background: rgba(0, 0, 0, 0.3) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 9999; /* must be higher than the video */
+  position: fixed; /* stays on top */
+  top: 0;
+  width: 100%;
+}
+
+.navbar .nav-link {
+  color: #ffffff !important;
+  font-weight: 500;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #606dc5 !important;
+}
+
+.signup-btn {
+  background-color: #33396d;
+  color: #ffffff !important;
+  font-weight: 600;
+  text-transform: lowercase;
+  padding: 4px 12px;
+  border: none !important;
+  border-radius: 8px;
+}
+
+.language-toggle {
+  font-weight: 500;
+  color: white !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.btn-outline-light:hover {
+  background-color: #33396d;
+  color: #ffffff;
+}
+/* Navbar styles (from your original code) */
+.glass-navbar {
+  background: rgba(0, 0, 0, 0.3) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar .nav-link {
+  color: #ffffff !important;
+  font-weight: 500;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #606dc5 !important;
+}
+
+.signup-btn {
+  background-color: #33396d;
+  color: #ffffff !important;
+  font-weight: 600;
+  text-transform: lowercase;
+  padding: 4px 12px;
+  border: none !important;
+  border-radius: 8px;
+}
+
+.language-toggle {
+  font-weight: 500;
+  color: white !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.btn-outline-light:hover {
+  background-color: #33396d;
+  color: #ffffff;
+}
+
+/* ===== Base Styles for Services Section ===== */
+/* ... existing navbar styles ... */
+/* ... existing navbar styles ... */
+
+/* ===== Base Styles for Services Section ===== */
+.services-carousel-section {
+  background: linear-gradient(135deg, #1a2a6c, #080226, #26033b);
+  color: white;
+  padding: 80px 0 20px; /* Reduced top padding, added bottom padding */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align items to the start (top) */
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===== Heading ===== */
+.services-heading {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 1.2rem 0 0.8rem; /* Further reduced top and bottom margin */
+  background: linear-gradient(90deg, #64588ddb, #404143);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== Carousel Viewport (The visible window) ===== */
+.carousel-viewport {
+  width: 100vw;
+  max-width: none;
+  height: 480px; /* Increased height to accommodate larger cards */
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ===== Carousel 3D Container (Applies perspective) ===== */
+.carousel-3d-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  perspective: 1000px; /* Adjust this value for more/less perspective distortion */
+  perspective-origin: center center;
+}
+
+/* ===== Carousel Track (Container for 3D positioned cards) ===== */
+.carousel-track {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 40%; /* Adjusted from 50% to 49% to shift slightly left */
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+}
+/* ===== Carousel Card Wrapper (Motion.div that holds Tilt card) ===== */
+.service-card-3d-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+  margin-top: -260px;
+}
+
+/* ===== Glass Cards (Content of each card) ===== */
+.service-card {
+  width:300px; /* Fixed width for base card */
+  height: 400px; /* Fixed height for base card */
+  background: rgba(30, 32, 45, 0.25);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  padding: 1rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Center card visual styling (no transforms here, just other styles) */
+.service-card.center {
+  background: linear-gradient(to bottom right, rgba(106, 90, 205, 0.2), rgba(30, 30, 60, 0.4));
+  box-shadow: 0 15px 40px rgba(106, 90, 205, 0.4);
+}
+
+/* ===== Description Box ===== */
+.service-description {
+  margin-top: -4.9rem; /* Further reduced margin-top */
+  width: 700px;
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(20, 20, 40, 0.3);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  transition: all 0.3s ease-in-out;
+  z-index: 5;
+}
+
+.service-description h4 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
+
+.service-description p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ===== Navigation Arrows ===== */
+.carousel-nav-arrows {
+  margin-top: 15px; /* Slightly reduced margin-top */
+  display: flex;
+  gap: 15px;
+  z-index: 5;
+}
+
+.carousel-nav-arrows .btn {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1.5rem;
+  padding: 5px 15px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.carousel-nav-arrows .btn:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* ===== Responsive (Adjust for smaller screens) ===== */
+@media (max-width: 992px) {
+  .carousel-viewport {
+    height: 420px; /* Adjusted */
+  }
+  .carousel-3d-container {
+    perspective: 800px;
+  }
+  .service-card {
+    width: 140px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-viewport {
+    height: 380px; /* Adjusted */
+  }
+  .service-card {
+    width: 120px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-viewport {
+    height: 330px; /* Adjusted */
+  }
+  .service-card {
+    width: 100px;
+    height: 140px;
+    font-size: 0.8rem;
+  }
+  .services-heading {
+    font-size: 2.2rem;
+  }
+  .service-description {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+}

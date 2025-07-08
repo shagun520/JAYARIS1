@@ -14,7 +14,6 @@ import {
   FaPaintBrush,
   FaTwitter
 } from "react-icons/fa";
-import "./App.css";
 export default function HomePage() {
   const [dynamicText, setDynamicText] = useState("");
   const dynamicWords = ["Get.", "Set.", "Host."];
