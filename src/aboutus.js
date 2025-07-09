@@ -1,142 +1,292 @@
-import AOS from "aos";
-import "aos/dist/aos.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Lottie from "lottie-react";
+import React from "react";
+import "./aboutus.css"; // if you’re using a CSS file
+import { motion } from "framer-motion";
+import { Container, Nav, Navbar, Button, Dropdown } from "react-bootstrap";
+import { Link } from 'react-router-dom';
 import { useEffect, useState } from "react";
-import { Button, Col, Container, Nav, Navbar, Row } from "react-bootstrap";
-import {
-  FaChartLine,
-  FaCogs,
-  FaFacebook,
-  FaLaptopCode,
-  FaLinkedin,
-  FaMobileAlt,
-  FaPaintBrush,
-  FaTwitter
-} from "react-icons/fa";
-export default function HomePage() {
-  const [dynamicText, setDynamicText] = useState("");
-  const dynamicWords = ["Get.", "Set.", "Host."];
-  const [wordIndex, setWordIndex] = useState(0);
+import { Typewriter } from "react-simple-typewriter";
+import Tilt from "react-parallax-tilt";
+import logoImage from './image/logo.png';
+import Footer from './components/Footer'; 
+import './components/Footer.css';
+import { useLocation } from 'react-router-dom';
+const AboutUs = () => {
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
-  }, []);
+    // Scrolls to the top of the page when the pathname for *this specific page* changes.
+    // The !window.location.hash check ensures it doesn't scroll for internal anchor links.
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname]);
+   const [showCode, setShowCode] = useState(false);
+  const [showDeploy, setShowDeploy] = useState(false);
+  const [showPara, setShowPara] = useState(false);
+
+  // ✅ Add this here 👇
+  const [showCard, setShowCard] = useState(false);
 
   useEffect(() => {
-    const currentWord = dynamicWords[wordIndex];
-    let i = 0;
-    setDynamicText("");
-
-    const typeInterval = setInterval(() => {
-      setDynamicText((prev) => prev + currentWord.charAt(i));
-      i++;
-      if (i >= currentWord.length) clearInterval(typeInterval);
-    }, 150);
-
-    const nextWordTimeout = setTimeout(() => {
-      setWordIndex((prev) => (prev + 1) % dynamicWords.length);
-    }, currentWord.length * 150 + 1000);
-
+    const codeTimer = setTimeout(() => setShowCode(true), 1500);
+    const deployTimer = setTimeout(() => setShowDeploy(true), 3000);
+    const paraTimer = setTimeout(() => setShowPara(true), 4500);
+      // ✅ Add this for the card animation
+    const cardTimer = setTimeout(() => setShowCard(true), 1200);
     return () => {
-      clearInterval(typeInterval);
-      clearTimeout(nextWordTimeout);
+      clearTimeout(codeTimer);
+      clearTimeout(deployTimer);
+      clearTimeout(paraTimer);
+      clearTimeout(cardTimer); // ✅ also clear this
     };
-  }, [wordIndex]);
-
+  }, []);
   return (
-    <>
-      {/* Navbar */}
-      <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
-        <Container>
-          <Navbar.Brand href="#home">Jayaris</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ml-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#about">About</Nav.Link>
-              <Nav.Link href="#services">Services</Nav.Link>
-              <Nav.Link href="#blogs">Blogs</Nav.Link>
-              <Nav.Link href="#contact">Contact</Nav.Link>
+      //nav bar
+      <>
+      <motion.div
+      initial={{ opacity: 0, y: -30, filter: "blur(8px)" }}
+      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      transition={{ duration: 1.2, ease: "easeOut", delay: 0.5 }}
+      style={{ position: 'fixed', width: '100%', zIndex: 9999 }}
+    >
+      <Navbar expand="lg" fixed="top" className="glass-navbar px-4">
+        <Container fluid className="d-flex justify-content-between align-items-center">
+
+          {/* Left: Jayaris Brand - UPDATED */}
+          <Navbar.Brand as={Link} to="/" className="d-flex align-items-center"> {/* Added as={Link} to="/" and d-flex for alignment */}
+            <img
+              src={logoImage} // Use the imported image
+              width="30" // Initial width, will adjust with CSS
+              height="30" // Initial height, will adjust with CSS
+              className="d-inline-block align-top me-2" // Bootstrap classes for inline-block, vertical alignment, and right margin
+              alt="Jayaris Logo"
+            />
+            <span className="fw-bold text-white">Jayaris</span> {/* Keep the text next to it */}
+          </Navbar.Brand>
+
+          {/* Toggler for mobile */}
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+
+          {/* Collapsible content */}
+          <Navbar.Collapse id="responsive-navbar-nav">
+            {/* Center: Nav Links */}
+            <Nav className="mx-auto">
+              <Nav.Link as={Link} to="/">Home</Nav.Link>
+              <Nav.Link as={Link} to="/about">About</Nav.Link>
+              <Nav.Link as={Link} to="/services">Services</Nav.Link>
+              <Nav.Link href="#blogs">Testimonials</Nav.Link>
+              <Nav.Link href="#contact">Career</Nav.Link>
+              <Nav.Link href="#contact">Contact Us</Nav.Link>
             </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
 
-      {/* Hero Section */}
-      <section className="hero d-flex align-items-center" id="home" style={{ minHeight: "100vh" }}>
-        <Container>
-          <Row className="align-items-center">
-            <Col md={6} className="text-center text-md-start">
-              <h1 className="display-4 fw-bold">{dynamicText}</h1>
-            </Col>
-            <Col md={6} className="text-center">
-              <div style={{ width: "400px", height: "400px", margin: "0 auto" }}>
-                {/* Lottie animation goes here */}
+            {/* Right: Signup + Language - these will also collapse */}
+            <div className="d-flex align-items-center gap-3 ms-lg-auto">
+              <Button variant="outline-light" size="sm" className="signup-btn">
+                Signup/Signin
+              </Button>
+              <Dropdown align="end">
+                <Dropdown.Toggle variant="outline-light" size="sm" className="language-toggle d-flex align-items-center">
+                  <span className="me-1">🌐</span> En
+                </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item>English</Dropdown.Item>
+                    <Dropdown.Item>हिन्दी</Dropdown.Item>
+                    <Dropdown.Item>Français</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
               </div>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+            </Navbar.Collapse>
 
-      {/* About Us Section */}
-      <section id="about" className="about-section py-5">
-        <Container>
-          <h2 className="text-center mb-5">About Us</h2>
+          </Container>
+        </Navbar>
+      </motion.div>
 
-          <Row className="mb-4">
-            <Col>
-              <h4>Who We Are</h4>
-              <p>Jayaris is a global web and app development powerhouse delivering universal-standard quality through our deep technical expertise and forward-thinking strategies.</p>
-            </Col>
-          </Row>
 
-          <Row className="mb-5">
-            <Col md={6}>
-              <h4>Founder's Note</h4>
-              <p>Our journey started with a vision to empower businesses through technology that’s simple, effective, and scalable. Jayaris stands as a bridge between innovation and global impact.</p>
-            </Col>
-            <Col md={6}>
-              {/* Optional: Add founder's image or quote */}
-            </Col>
-          </Row>
+  {/* first viewport */}
+ <div className="aboutus-section">
+  {showPara && (
+    <div className="right-section">  {/* no motion here, just styling */}
 
-          <Row className="text-center mb-5">
-            <Col md={4}><h5>Mission</h5><p>Bridging borders through innovation</p></Col>
-            <Col md={4}><h5>Vision</h5><p>Becoming the trusted digital partner for businesses globally</p></Col>
-            <Col md={4}><h5>Values</h5><p>Excellence, Transparency, Agility</p></Col>
-          </Row>
+      {/* JAYARIS Title */}
+      <motion.h1
+        className="jayaris-title"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+      >
+        JAYARIS
+      </motion.h1>
 
-          <Row className="text-center mb-4">
-            <Col md={4}><h6>Clients</h6><p>B2B firms, startups</p></Col>
-            <Col md={4}><h6>Students</h6><p>Tech interns, young developers</p></Col>
-            <Col md={4}><h6>Organizations</h6><p>University and college partners</p></Col>
-          </Row>
-        </Container>
-      </section>
+      {/* Tagline */}
+      <motion.p
+        className="jayaris-tagline"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+      >
+        Jayaris is where bold ideas meet seamless execution.
+      </motion.p>
 
-      {/* Footer */}
-      <footer className="footer text-white py-4 bg-dark">
-        <Container>
-          <Row>
-            <Col md={6}>
-              <ul className="list-inline">
-                <li className="list-inline-item"><a href="#home">Home</a></li>
-                <li className="list-inline-item"><a href="#about">About</a></li>
-                <li className="list-inline-item"><a href="#services">Services</a></li>
-                <li className="list-inline-item"><a href="#blogs">Blogs</a></li>
-                <li className="list-inline-item"><a href="#contact">Contact</a></li>
-              </ul>
-            </Col>
-            <Col md={6} className="text-end">
-              <FaFacebook className="me-3" />
-              <FaTwitter className="me-3" />
-              <FaLinkedin />
-              <div className="mt-2">&copy; {new Date().getFullYear()} Jayaris. All rights reserved.</div>
-            </Col>
-          </Row>
-        </Container>
-      </footer>
-    </>
+      {/* Paragraph card */}
+      {showCard && (
+      <motion.div
+        className="glass-card1"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut", delay: 0.9 }}
+      >
+        <h3>Empowering the Digital Future — One Solution at a Time</h3>
+        <p>
+          Jayaris is where bold ideas meet seamless execution. We are a new-age IT solutions company helping businesses grow, scale, and innovate with cutting-edge digital services.
+          <br />
+          From startups to enterprises, we help brands transform with technology — building high-performing digital products that solve real-world problems.
+        </p>
+      </motion.div>
+)}
+    </div>
+  )}
+</div>
+
+{/* mission */}
+<motion.div
+  className="mission-wrapper"
+  initial={{ opacity: 0, x: -100 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 1, ease: "easeOut" }}
+  viewport={{ once: true, amount: 0.5 }}
+>
+  <section className="mission-section" id="mission">
+    <motion.h2
+      className="mission-heading"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1.5, delay: 0.4 }}
+    >
+      {"Our Mission".split(" ").map((word, idx) => (
+        <motion.span
+          key={idx}
+          className="word-span"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8 + idx * 0.4 }} // Staggered animation
+        >
+          {word}&nbsp;
+        </motion.span>
+      ))}
+    </motion.h2>
+
+    <motion.p
+      className="mission-para"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.2, ease: "easeOut", delay: 1.8 }}
+      viewport={{ once: true }}
+    >
+      At Jayaris, our mission is to bridge global gaps through technology by delivering
+      future-ready digital solutions that blend creativity, functionality, and impact. We aim
+      to elevate brands, streamline operations, and unlock growth for clients across borders
+      by leveraging India’s top tech talent and global best practices. To bridge borders
+      through technology by delivering reliable, scalable, and innovative IT solutions to
+      clients worldwide.
+    </motion.p>
+  </section>
+</motion.div>
+
+
+{/* Vision Section */}
+<motion.section
+  className="info-section"
+  initial={{ opacity: 0, x: 120 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 1.2, ease: "easeOut" }}
+  viewport={{ once: true, amount: 0.5 }} // triggers when ~40% in view
+>
+  <motion.h2
+    className="info-heading"
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 0.6, delay: 0.5 }}
+    viewport={{ once: true }}
+  >
+    {"Our Vision".split(" ").map((word, idx) => (
+      <motion.span
+        key={idx}
+        className="word-span"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.7 + idx * 0.3 }}
+      >
+        {word}&nbsp;
+      </motion.span>
+    ))}
+  </motion.h2>
+
+  <motion.p
+    className="info-paragraph"
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 1, delay: 2 }}
+    viewport={{ once: true }}
+  >
+    At Jayaris, we envision becoming the most trusted global partner in
+    digital transformation — a name synonymous with innovation,
+    reliability, and client success. Our goal is to empower businesses
+    and institutions around the world by delivering cutting-edge IT
+    solutions that are not only scalable and efficient but also
+    tailored to real-world challenges.
+    <br /><br />
+    As we strive to lead the way in tech excellence, we remain deeply
+    committed to helping our clients achieve long-term growth and
+    competitive advantage through the intelligent use of technology.
+    In this pursuit, trust is our foundation, excellence is our
+    benchmark, and innovation is the path we follow.
+  </motion.p>
+</motion.section>
+
+{/* Values Section */}
+<section className="values-wrapper" id="values">
+  <motion.div
+    className="values-container glass-section"
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+     whileHover={{ rotateX: 5, rotateY: -5 }}
+    transition={{ duration: 1, ease: "easeOut" }}
+    viewport={{ once: true }}
+  >
+    <motion.h2
+      className="values-heading"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1.2, delay: 0.4 }}
+      viewport={{ once: true }}
+    >
+      OUR VALUES
+    </motion.h2>
+
+    <div className="values-list">
+  {["Innovation", "Excellence", "Agility", "Transparency", "Global Thinking"].map(
+    (value, index) => (
+      <Tilt glareEnable={true} glareMaxOpacity={0.2} scale={1.02} transitionSpeed={1500}>
+        <motion.div
+          key={index}
+          className="value-box"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.8 + index * 0.3 }}
+          viewport={{ once: true }}
+        >
+          {value}
+        </motion.div>
+      </Tilt>
+    )
+  )}
+</div>
+  </motion.div>
+</section>
+
+<Footer />
+</>
   );
-}
+};
+
+export default AboutUs;

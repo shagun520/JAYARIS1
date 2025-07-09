@@ -13,6 +13,7 @@ import Services from './Services';
 import AboutUs from './aboutus';
 import { Link } from 'react-router-dom';
 import logoImage from './image/logo.png';
+
 import {
   FaFacebook,
 
@@ -25,6 +26,8 @@ import "./App1.css";
 import client1 from './image/client1.jpeg';
 import client2 from './image/client2.jpeg';
 import client3 from './image/client3.jpeg';
+import Footer from './components/Footer'; 
+import './components/Footer.css';
 const points = ["Global Delivery", "Top Talent", "Agile Execution", "Post-Delivery Support"];
 
 const feedbackList = [
@@ -272,6 +275,82 @@ const serviceData = [
   </motion.div>
 </section>
 
+{/* Service Section */}
+<section className="expert-services">
+  <div className="expert-container">
+    {/* Heading Section */}
+    <motion.div
+      className="expert-left"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+    >
+      <motion.h2
+        className="expert-title"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0, duration: 0.6 }}
+      >
+        Expert services we offer
+      </motion.h2>
+
+      <motion.p
+        className="expert-subtitle"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.5, duration: 0.6 }}
+      >
+        We simplify your digital presence with secure, scalable solutions tailored to your needs.
+      </motion.p>
+    </motion.div>
+
+    {/* Service Grid */}
+    <motion.div
+      className="expert-grid"
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ delay: 1.0, duration: 0.6 }}
+    >
+      {[
+  { name: 'Web Development', img: 'swebd.png' },
+  { name: 'App Development', img: 'sappd.png' },
+  { name: 'UI/UX Design', img: 'suiux.png' },
+  { name: 'Cybersecurity Solutions', img: 'scyber.png' },
+  { name: 'SEO & Digital Marketing', img: 'sseo.png' },
+  { name: 'AI & Automation', img: 'sai.png' },
+  { name: 'CMS Integration', img: 'scms.png' },
+  { name: 'Blockchain Development', img: 'sblock.png' },
+  { name: 'Content Creation', img: 'scontent.png' },
+  { name: 'Business Dashboards', img: 'sdashboard.png' }
+].map((service, index) => (
+  <Tilt
+    key={index}
+    glareEnable={true}
+    glareMaxOpacity={0.2}
+    scale={1.03}
+    transitionSpeed={250}
+    tiltMaxAngleX={8}
+    tiltMaxAngleY={8}
+    className="tilt-wrapper"
+  >
+    <div className="expert-card">
+      <img
+        src={require(`./image/${service.img}`)}
+        alt={service.name}
+        className="service-icon-img"
+      />
+      <span className="service-label">{service.name}</span>
+    </div>
+  </Tilt>
+))}
+
+    </motion.div>
+  </div>
+</section>
 
 
 
@@ -325,27 +404,7 @@ const serviceData = [
         </Container>
       </section>
 
-      <footer className="footer text-white py-4">
-        <Container>
-          <Row>
-            <Col md={6}>
-              <ul className="list-inline">
-                <li className="list-inline-item"><a href="#home">Home</a></li>
-                <li className="list-inline-item"><a href="#about">About</a></li>
-                <li className="list-inline-item"><a href="#services">Services</a></li>
-                <li className="list-inline-item"><a href="#blogs">Blogs</a></li>
-                <li className="list-inline-item"><a href="#contact">Contact</a></li>
-              </ul>
-            </Col>
-            <Col md={6} className="text-end">
-              <FaFacebook className="me-3" />
-              <FaTwitter className="me-3" />
-              <FaLinkedin />
-              <div className="mt-2">&copy; {new Date().getFullYear()} Jayaris. All rights reserved.</div>
-            </Col>
-          </Row>
-        </Container>
-      </footer>
+      <Footer />
     </>
   );
 }
@@ -356,6 +415,16 @@ export default function App1() {
       <Route path="/" element={<HomePage />} />
       <Route path="/services" element={<Services />} />
       <Route path="/about" element={<AboutUs />} />
+       {/* Add more routes for your footer links that go to separate pages */}
+          <Route path="/career" element={<p>Career Page Placeholder</p>} />
+          <Route path="/testimonials" element={<p>Testimonials Page Placeholder</p>} />
+          <Route path="/contact" element={<p>Contact Us Page Placeholder</p>} />
+          <Route path="/blog" element={<p>Blog Page Placeholder</p>} />
+          <Route path="/terms" element={<p>Terms & Conditions Page Placeholder</p>} />
+          <Route path="/privacy" element={<p>Privacy Policy Page Placeholder</p>} />
+          <Route path="/cookie-policy" element={<p>Cookie Policy Page Placeholder</p>} />
+          <Route path="/sitemap" element={<p>Sitemap Page Placeholder</p>} />
     </Routes>
+    
   );
 }

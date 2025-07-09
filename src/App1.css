@@ -241,115 +241,105 @@ a {
     padding: 1rem;
   }
 }
+/* Service Section */
 
-
-/* Why Jayaris */
-
-.why-jayaris-content {
-  max-width: 800px;
-  color: #222;
-}
-
-.why-jayaris-content p {
-  font-size: 1.3rem;
-  line-height: 1.8;
-}
-
-.why-jayaris-wrapper {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 4rem 2rem;
-  height: auto;
-  overflow: hidden;
-}
-
-.orbit-bg-lottie {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.expert-services {
   width: 100%;
-  height: 100%;
-  opacity: 0.07;
-  z-index: 1;
-  pointer-events: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.orbit-bg-lottie canvas {
-  max-width: 500px;
-  max-height: 500px;
-}
-.why-jayaris-slide-section {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  height: 100vh;
   padding: 4rem 2rem;
-  z-index: 2;
-}
-
-
-.floating-lottie {
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  z-index: 0;
-  pointer-events: none;
-  animation: floatLottie 8s ease-in-out infinite;
-}
-.why-jayaris-wrapper .lottie1 > div {
-  height: 105px !important;
-}
-.why-jayaris-wrapper .lottie3 > div {
-  height: 195px !important;
-  width: 200px;
-}
-.why-jayaris-wrapper .lottie2 > div {
-  height: 105px !important;
-  width: 200px;
-  margin-top: -90px;
-}
-.lottie1 { top: 5%; left: 5%; animation-delay: 0s; }
-.lottie2 { top: 20%; right: 6%; animation-delay: 1.5s; }
-.lottie3 { bottom: 12%; left: 8%; animation-delay: 2.5s; }
-.lottie4 { bottom: 18%; right: 10%; animation-delay: 3.5s; }
-.service-point {
-  max-width: 220px;
-}
-
-
-@keyframes floatLottie {
-  0%   { transform: translateY(0px); }
-  50%  { transform: translateY(-8px); }
-  100% { transform: translateY(0px); }
-}
-
-@keyframes fadeText {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-
-@keyframes zoomIn {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-.lottie {
-  background-color: #050527;
-  width: 100vw;           /* Full viewport width */
-  margin: 0;
-  padding: 2rem 0;        /* Add top/bottom spacing if needed */
+  background: linear-gradient(135deg, #291f55, #080e31, #0c011f);
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+}
+
+.expert-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1300px;
+  width: 100%;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.expert-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 280px;
+}
+
+.expert-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.expert-subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 400px;
+}
+
+.expert-grid {
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.expert-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border-radius: 16px;
+  border: 1.5px solid transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 1.2rem;
+  height: 50px;
+  transition: 0.3s ease;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 0 0 transparent;
+}
+
+.expert-card:hover {
+  border-color: #8b8dff; /* Neon glow */
+  box-shadow: 0 0 15px #9b9bffae;
+}
+
+.service-icon-img {
+  height: 32px;
+  width: 32px;
+  object-fit: contain;
+  margin-right: 12px;
+}
+
+/* Mobile Friendly */
+@media (max-width: 768px) {
+  .expert-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .expert-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .expert-left {
+    align-items: center;
+    text-align: center;
+  }
 }
 
 /* SECTION BASE */
-
 
 .testimonial-feedback {
   font-size: 16px;
@@ -357,8 +347,6 @@ a {
   min-height: 120px;
 }
 .testimonial-glass-section {
-    border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
   min-height: 100vh;
   background: radial-gradient(ellipse at center, #0d0d1f, #000000);
   padding: 5rem 2rem;

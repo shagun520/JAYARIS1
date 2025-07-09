@@ -5,6 +5,9 @@ import { Container, Nav, Navbar, Button, Dropdown } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import React, { useState, useRef, useLayoutEffect, useCallback, useMemo, useEffect } from "react"; // Import useEffect
 import logoImage from './image/logo.png';
+import Footer from './components/Footer'; 
+import './components/Footer.css'; 
+import { useLocation } from 'react-router-dom';
 const servicesData = [
   { title: "Web Development", description: "We build fast, secure, and beautifully designed websites that make you stand out online." },
   { title: "App Development", description: "From Android to iOS, we create mobile apps that are smooth, powerful, and user-friendly." },
@@ -19,6 +22,15 @@ const servicesData = [
 ];
 
 const Services = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    // Scrolls to the top of the page when the pathname for *this specific page* changes.
+    // The !window.location.hash check ensures it doesn't scroll for internal anchor links.
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname]);
   const [virtualIndex, setVirtualIndex] = useState(1);
   const carouselTrackRef = useRef(null);
   const carouselViewportRef = useRef(null); // Ref for the viewport to attach wheel listener
@@ -304,7 +316,7 @@ const Services = () => {
           <Button variant="outline-light" onClick={() => handleSwipe("left")}>&gt;</Button>
         </div>
       </section>
-      
+      <Footer />
     </>
   );
 };

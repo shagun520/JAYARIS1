@@ -1,0 +1,261 @@
+body {
+  background: linear-gradient(135deg, #030320, #505691);
+  background-size: cover;          /* Makes the image cover the entire area */
+  background-repeat: no-repeat;    /* Prevents tiling */
+  background-position: center;     /* Centers the image */
+  background-attachment: fixed;    /* Optional: makes background stay on scroll */
+  margin: 0;
+  padding: 0;
+}
+.glass-navbar { 
+  background: rgba(0, 0, 0, 0.3) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 9999; /* must be higher than the video */
+  position: fixed; /* stays on top */
+  top: 0;
+  width: 100%;
+}
+
+.navbar .nav-link {
+  color: #ffffff !important;
+  font-weight: 500;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #606dc5 !important;
+}
+
+.signup-btn {
+  background-color: #33396d;
+  color: #ffffff !important;
+  font-weight: 600;
+  text-transform: lowercase;
+  padding: 4px 12px;
+  border: none !important;
+  border-radius: 8px;
+}
+
+.language-toggle {
+  font-weight: 500;
+  color: white !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.btn-outline-light:hover {
+  background-color: #33396d;
+  color: #ffffff;
+}
+.navbar-brand img {
+  height: 2.9rem; /* Adjust height using rem for responsiveness */
+  width: auto;   /* Maintain aspect ratio */
+  vertical-align: middle; /* Ensure it aligns nicely with text */
+  margin-right: 0.5rem; /* Space between logo and text */
+}
+
+/* You might want to adjust the Navbar.Brand font size if the logo is large */
+.navbar-brand .fw-bold {
+  font-size: 1.5rem; /* Example: adjust brand text size */
+}
+
+/* Adjust for smaller screens if needed */
+@media (max-width: 991.98px) { /* Adjust breakpoint to match your navbar.expand="lg" */
+  .navbar-brand img {
+    height: 1.8rem; /* Slightly smaller logo on mobile */
+    margin-right: 0.3rem;
+  }
+  .navbar-brand .fw-bold {
+    font-size: 1.3rem;
+  }
+}
+ /* about us */
+.aboutus-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
+  min-height: 100vh;
+  color: white;
+}
+.left-stack {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 600;
+  min-height: 200px; /* Ensures space is preserved */
+  gap: 0.5rem;
+}
+.stack-line {
+  background: linear-gradient(to right, #5f5cbd, #91aeff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.right-section {
+    margin-top: 200px;
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical centering */
+  align-items: center;     /* horizontal centering */
+  gap: 1rem;
+}
+
+.brand-title {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.jayaris-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: rgb(212, 230, 255);
+
+}
+
+.jayaris-tagline {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+}
+.glass-card1 {
+  text-align: center;
+  font-size: 1.06rem;
+  color: rgb(251, 254, 255);
+  max-width: 750px;
+}
+
+{/* mission */}
+
+.mission-section {
+  margin: 6rem auto;
+  margin-bottom: 17rem;
+  max-width: 1000px;
+  padding: 3rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.3);
+  color: #ffffff;
+  background-image: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+}
+
+.mission-heading {
+  font-size: 2.4rem;
+  font-weight: 600;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.word-span {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.mission-para {
+  font-size: 1.1rem;
+  color: #d1e9ff;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+
+.info-section {
+  margin: 5rem auto;
+  max-width: 1000px;
+  padding: 3rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.3);
+  color: #ffffff;
+  background-image: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+}
+
+.info-heading {
+  font-size: 2.4rem;
+  font-weight: 600;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.info-paragraph {
+  font-size: 1.1rem;
+  color: #d1e9ff;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+{/* values */}
+
+.values-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  max-width: 73%;
+  margin-left: 190px;
+}
+
+.glass-section {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 3rem;
+  border-radius: 20px;
+  background-image: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.3);
+}
+
+.values-heading {
+  margin-top: 97px;
+  font-size: 4rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.735);
+  text-transform: uppercase;
+  flex: 1;
+}
+
+.values-list {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.value-box {
+  padding: 1rem 2rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.124);
+  color: #d1e9ff;
+  font-size: 1.3rem;
+  font-weight: 500;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: transform 0.3s ease;
+}
+
+.value-box:hover {
+  transform: translateY(-5px);
+}

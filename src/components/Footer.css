@@ -1,0 +1,69 @@
+/* src/components/Footer.css */
+
+.main-footer {
+  background-color: #0d0d1e;
+  color: #f8f9fa;
+  font-size: 0.95rem;
+}
+
+.main-footer .footer-heading {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.main-footer .footer-text {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.main-footer .footer-links,
+.main-footer .footer-contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.main-footer .footer-links li,
+.main-footer .footer-contact-info li {
+  margin-bottom: 0.6rem;
+}
+
+.main-footer .footer-links a,
+.main-footer .footer-contact-info a,
+.main-footer .footer-contact-info {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.main-footer .footer-links a:hover,
+.main-footer .footer-contact-info a:hover {
+  color: #606dc5;
+}
+
+.footer-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-copyright {
+  color: #e0e0e0;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+@media (max-width: 767.98px) {
+  .main-footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .main-footer .footer-heading {
+    margin-bottom: 1rem;
+    padding-bottom: 0.3rem;
+  }
+}
