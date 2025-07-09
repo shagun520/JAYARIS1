@@ -1,24 +1,35 @@
 {
   "files": {
-    "main.css": "/JAYARIS1/static/css/main.233b38bf.css",
-    "main.js": "/JAYARIS1/static/js/main.0e0e0422.js",
+    "main.css": "/JAYARIS1/static/css/main.abcabfd6.css",
+    "main.js": "/JAYARIS1/static/js/main.5cac374c.js",
     "static/media/earthbg.mp4": "/JAYARIS1/static/media/earthbg.7a34203da2f61a6b4faa.mp4",
+    "static/media/your-video.mp4": "/JAYARIS1/static/media/your-video.6ed8432a3d845192b424.mp4",
     "static/media/client2.jpeg": "/JAYARIS1/static/media/client2.22bc2bffac0d9ae07700.jpeg",
     "static/media/logo.png": "/JAYARIS1/static/media/logo.b70fd411c808c1328089.png",
     "static/media/results.png": "/JAYARIS1/static/media/results.18e68cee5af4d73b4843.png",
     "static/media/client3.jpeg": "/JAYARIS1/static/media/client3.e854a9c545bfffb1acf4.jpeg",
+    "static/media/sai.png": "/JAYARIS1/static/media/sai.91dcb60e62daa1dee2e0.png",
+    "static/media/scontent.png": "/JAYARIS1/static/media/scontent.998dec55b959a01edb99.png",
     "static/media/help.png": "/JAYARIS1/static/media/help.38f0bd28f5789bdbfe62.png",
+    "static/media/sblock.png": "/JAYARIS1/static/media/sblock.2e450c5540fb0cb01151.png",
+    "static/media/scms.png": "/JAYARIS1/static/media/scms.f5fdae66b4b49f4232f4.png",
     "static/media/leadership.png": "/JAYARIS1/static/media/leadership.128a836daf4cdd88b9fc.png",
+    "static/media/sseo.png": "/JAYARIS1/static/media/sseo.bdd58914792e02d7d245.png",
     "static/media/stopwatch.png": "/JAYARIS1/static/media/stopwatch.a61c3df49790984ab201.png",
+    "static/media/sdashboard.png": "/JAYARIS1/static/media/sdashboard.34853901917a1fb888cc.png",
     "static/media/cyber-security.png": "/JAYARIS1/static/media/cyber-security.5c78cb80c11bc803a84d.png",
+    "static/media/scyber.png": "/JAYARIS1/static/media/scyber.44737eb31ee6d7b91fa7.png",
+    "static/media/suiux.png": "/JAYARIS1/static/media/suiux.54588c33900a86c99845.png",
     "static/media/client1.jpeg": "/JAYARIS1/static/media/client1.03eb73ef626f79c870ac.jpeg",
     "static/media/award.png": "/JAYARIS1/static/media/award.8889805b329a083c68b9.png",
+    "static/media/swebd.png": "/JAYARIS1/static/media/swebd.55505f9d9b08f033a89d.png",
+    "static/media/sappd.png": "/JAYARIS1/static/media/sappd.aecaca7b28a973f26681.png",
     "index.html": "/JAYARIS1/index.html",
-    "main.233b38bf.css.map": "/JAYARIS1/static/css/main.233b38bf.css.map",
-    "main.0e0e0422.js.map": "/JAYARIS1/static/js/main.0e0e0422.js.map"
+    "main.abcabfd6.css.map": "/JAYARIS1/static/css/main.abcabfd6.css.map",
+    "main.5cac374c.js.map": "/JAYARIS1/static/js/main.5cac374c.js.map"
   },
   "entrypoints": [
-    "static/css/main.233b38bf.css",
-    "static/js/main.0e0e0422.js"
+    "static/css/main.abcabfd6.css",
+    "static/js/main.5cac374c.js"
   ]
 }
