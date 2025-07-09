@@ -1,12 +1,17 @@
 {
   "files": {
-    "main.css": "/JAYARIS1/static/css/main.abcabfd6.css",
-    "main.js": "/JAYARIS1/static/js/main.711ce407.js",
-    "static/media/earthbg.mp4": "/JAYARIS1/static/media/earthbg.7a34203da2f61a6b4faa.mp4",
+    "main.css": "/JAYARIS1/static/css/main.12d6f67c.css",
+    "main.js": "/JAYARIS1/static/js/main.c1976905.js",
+    "static/media/earthbg.mp4": "/JAYARIS1/static/media/earthbg.9cd18799712566afa3be.mp4",
     "static/media/your-video.mp4": "/JAYARIS1/static/media/your-video.6ed8432a3d845192b424.mp4",
+    "static/media/image.jpg": "/JAYARIS1/static/media/image.bb9f3f1e9e898a80d520.jpg",
+    "static/media/Team.jpg": "/JAYARIS1/static/media/Team.4194021f90d757d6747a.jpg",
+    "static/media/graphic.jpg": "/JAYARIS1/static/media/graphic.8ea687706ce5eb73347c.jpg",
     "static/media/client2.jpeg": "/JAYARIS1/static/media/client2.22bc2bffac0d9ae07700.jpeg",
+    "static/media/img1.jpg": "/JAYARIS1/static/media/img1.ea9479bb04f5339f7491.jpg",
     "static/media/logo.png": "/JAYARIS1/static/media/logo.b70fd411c808c1328089.png",
     "static/media/results.png": "/JAYARIS1/static/media/results.18e68cee5af4d73b4843.png",
+    "static/media/img2.webp": "/JAYARIS1/static/media/img2.69562e16c9c4b8844ef7.webp",
     "static/media/client3.jpeg": "/JAYARIS1/static/media/client3.e854a9c545bfffb1acf4.jpeg",
     "static/media/sai.png": "/JAYARIS1/static/media/sai.91dcb60e62daa1dee2e0.png",
     "static/media/scontent.png": "/JAYARIS1/static/media/scontent.998dec55b959a01edb99.png",
@@ -16,20 +21,22 @@
     "static/media/leadership.png": "/JAYARIS1/static/media/leadership.128a836daf4cdd88b9fc.png",
     "static/media/sseo.png": "/JAYARIS1/static/media/sseo.bdd58914792e02d7d245.png",
     "static/media/stopwatch.png": "/JAYARIS1/static/media/stopwatch.a61c3df49790984ab201.png",
+    "static/media/Contact.png": "/JAYARIS1/static/media/Contact.75c5c49e3d501a8b734c.png",
     "static/media/sdashboard.png": "/JAYARIS1/static/media/sdashboard.34853901917a1fb888cc.png",
     "static/media/cyber-security.png": "/JAYARIS1/static/media/cyber-security.5c78cb80c11bc803a84d.png",
     "static/media/scyber.png": "/JAYARIS1/static/media/scyber.44737eb31ee6d7b91fa7.png",
     "static/media/suiux.png": "/JAYARIS1/static/media/suiux.54588c33900a86c99845.png",
     "static/media/client1.jpeg": "/JAYARIS1/static/media/client1.03eb73ef626f79c870ac.jpeg",
     "static/media/award.png": "/JAYARIS1/static/media/award.8889805b329a083c68b9.png",
+    "static/media/bg2.jpeg": "/JAYARIS1/static/media/bg2.1b67e3614289ae8852ae.jpeg",
     "static/media/swebd.png": "/JAYARIS1/static/media/swebd.55505f9d9b08f033a89d.png",
     "static/media/sappd.png": "/JAYARIS1/static/media/sappd.aecaca7b28a973f26681.png",
     "index.html": "/JAYARIS1/index.html",
-    "main.abcabfd6.css.map": "/JAYARIS1/static/css/main.abcabfd6.css.map",
-    "main.711ce407.js.map": "/JAYARIS1/static/js/main.711ce407.js.map"
+    "main.12d6f67c.css.map": "/JAYARIS1/static/css/main.12d6f67c.css.map",
+    "main.c1976905.js.map": "/JAYARIS1/static/js/main.c1976905.js.map"
   },
   "entrypoints": [
-    "static/css/main.abcabfd6.css",
-    "static/js/main.711ce407.js"
+    "static/css/main.12d6f67c.css",
+    "static/js/main.c1976905.js"
   ]
 }
