@@ -22,15 +22,15 @@ const servicesData = [
 ];
 
 const Services = () => {
-  const { pathname } = useLocation();
+  const location = useLocation();
 
-  useEffect(() => {
-    // Scrolls to the top of the page when the pathname for *this specific page* changes.
-    // The !window.location.hash check ensures it doesn't scroll for internal anchor links.
-    if (!window.location.hash) {
+   useEffect(() => {
+    // Check if navigation came from a footer link (via location.state)
+    // AND if there's no hash (using the location object from useLocation())
+    if (location.state?.fromFooter && !location.hash) { // <-- CORRECTED LINE
       window.scrollTo(0, 0);
     }
-  }, [pathname]);
+  }, [location]);
   const [virtualIndex, setVirtualIndex] = useState(1);
   const carouselTrackRef = useRef(null);
   const carouselViewportRef = useRef(null); // Ref for the viewport to attach wheel listener

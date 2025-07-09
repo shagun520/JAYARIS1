@@ -29,13 +29,13 @@ const Footer = () => {
           <Col md={2} className="mb-4 mb-md-0">
             <h5 className="footer-heading">Quick links</h5>
             <ul className="list-unstyled footer-links">
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About us</Link></li>
-              <li><Link to="/services">Services</Link></li>
-              <li><Link to="/career">Career</Link></li>
-              <li><Link to="/testimonials">Testimonials</Link></li>
-              <li><Link to="/contact">Contact us</Link></li>
-              <li><Link to="/blog">Blog</Link></li>
+              <li><Link to="/" state={{ fromFooter: true }}>Home</Link></li>
+              <li><Link to="/about" state={{ fromFooter: true }}>About us</Link></li>
+              <li><Link to="/services" state={{ fromFooter: true }}>Services</Link></li>
+              <li><Link to="/career" state={{ fromFooter: true }}>Career</Link></li>
+              <li><Link to="/testimonials" state={{ fromFooter: true }}>Testimonials</Link></li>
+              <li><Link to="/contact" state={{ fromFooter: true }}>Contact us</Link></li>
+              <li><Link to="/blog" state={{ fromFooter: true }}>Blog</Link></li>
             </ul>
           </Col>
 
@@ -53,10 +53,10 @@ const Footer = () => {
           <Col md={3} className="mb-4 mb-md-0">
             <h5 className="footer-heading">Legal & Policies</h5>
             <ul className="list-unstyled footer-links">
-              <li><Link to="/terms">Terms & Conditions</Link></li>
-              <li><Link to="/privacy">Privacy Policy</Link></li>
-              <li><Link to="/cookie-policy">Cookie Policy</Link></li>
-              <li><Link to="/sitemap">Sitemap</Link></li>
+              <li><Link to="/terms" state={{ fromFooter: true }}>Terms & Conditions</Link></li>
+              <li><Link to="/privacy" state={{ fromFooter: true }}>Privacy Policy</Link></li>
+              <li><Link to="/cookie-policy" state={{ fromFooter: true }}>Cookie Policy</Link></li>
+              <li><Link to="/sitemap" state={{ fromFooter: true }}>Sitemap</Link></li>
             </ul>
           </Col>
         </Row>
