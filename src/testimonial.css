@@ -1,0 +1,149 @@
+
+/* Navbar styles (from your original code) */
+.glass-navbar {
+  background-color: rgba(32, 32, 32, 0.7) !important; /* darker and more visible */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.navbar .nav-link {
+  color: #ffffff !important;
+  font-weight: 500;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #606dc5 !important;
+}
+
+.signup-btn {
+  background-color: #33396d;
+  color: #ffffff !important;
+  font-weight: 600;
+  text-transform: lowercase;
+  padding: 4px 12px;
+  border: none !important;
+  border-radius: 8px;
+}
+
+.language-toggle {
+  font-weight: 500;
+  color: white !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.btn-outline-light:hover {
+  background-color: #33396d;
+  color: #ffffff;
+}
+.navbar-brand img {
+  height: 2.9rem; /* Adjust height using rem for responsiveness */
+  width: auto;   /* Maintain aspect ratio */
+  vertical-align: middle; /* Ensure it aligns nicely with text */
+  margin-right: 0.5rem; /* Space between logo and text */
+}
+
+/* You might want to adjust the Navbar.Brand font size if the logo is large */
+.navbar-brand .fw-bold {
+  font-size: 1.5rem; /* Example: adjust brand text size */
+}
+
+/* Adjust for smaller screens if needed */
+@media (max-width: 991.98px) { /* Adjust breakpoint to match your navbar.expand="lg" */
+  .navbar-brand img {
+    height: 1.8rem; /* Slightly smaller logo on mobile */
+    margin-right: 0.3rem;
+  }
+  .navbar-brand .fw-bold {
+    font-size: 1.3rem;
+  }
+}
+/* src/components/Testimonial.css */
+
+.testimonial-glass-section {
+  min-height: 100vh;
+  background: radial-gradient(ellipse at center, #0d0d1f, #000000);
+  padding: 5rem 2rem;
+  position: relative;
+}
+
+.glass-message-box {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  padding: 2rem 3rem;
+  text-align: center;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 4rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.client-feedback-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.client-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  color: #fff;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.client-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.client-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.stars .star {
+  color: gold;
+  font-size: 18px;
+}
+
+/* You had this, but it was not used in the JSX.
+   If you intend to use it, ensure you apply a class like 'testimonial-feedback'
+   to the <p> tag that contains the feedback text in Testimonial.js.
+*/
+.testimonial-feedback {
+  font-size: 16px;
+  color: #333; /* This color might be problematic on dark background, adjust if needed */
+  min-height: 120px;
+}
+
+/* Responsive adjustments for Testimonials (add as needed) */
+@media (max-width: 768px) {
+  .glass-message-box {
+    padding: 1.5rem 2rem;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+  }
+  .client-feedback-grid {
+    grid-template-columns: 1fr; /* Stack cards on very small screens */
+  }
+}

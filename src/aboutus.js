@@ -74,16 +74,18 @@ const AboutUs = () => {
               <Nav.Link as={Link} to="/">Home</Nav.Link>
               <Nav.Link as={Link} to="/about">About</Nav.Link>
               <Nav.Link as={Link} to="/services">Services</Nav.Link>
-              <Nav.Link href="#blogs">Testimonials</Nav.Link>
+              <Nav.Link as={Link} to="/testimonials">Testimonials</Nav.Link>
               <Nav.Link href="#contact">Career</Nav.Link>
               <Nav.Link href="#contact">Contact Us</Nav.Link>
             </Nav>
 
             {/* Right: Signup + Language - these will also collapse */}
             <div className="d-flex align-items-center gap-3 ms-lg-auto">
-              <Button variant="outline-light" size="sm" className="signup-btn">
-                Signup/Signin
-              </Button>
+              <Link to="/auth" style={{ textDecoration: "none" }}>
+                <Button variant="outline-light" size="sm" className="signup-btn">
+                  Login
+                </Button>
+              </Link>
               <Dropdown align="end">
                 <Dropdown.Toggle variant="outline-light" size="sm" className="language-toggle d-flex align-items-center">
                   <span className="me-1">🌐</span> En
@@ -103,49 +105,56 @@ const AboutUs = () => {
 
 
   {/* first viewport */}
- <div className="aboutus-section">
-  {showPara && (
-    <div className="right-section">  {/* no motion here, just styling */}
+ {/* first viewport */}
+ 
+  <div className="aboutus-section">
+  <div className="right-section">
+    {/* Logo (always visible) */}
+    <motion.img
+      src={logoImage}
+      alt="Jayaris Logo"
+      className="jayaris-logo-about"
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut", delay: 0 }}
+      layout
+    />
 
-      {/* JAYARIS Title */}
-      <motion.h1
-        className="jayaris-title"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-      >
-        JAYARIS
-      </motion.h1>
-
-      {/* Tagline */}
+    {/* Tagline container with space preserved */}
+    <div className="tagline-placeholder">
       <motion.p
         className="jayaris-tagline"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+        layout
       >
         Jayaris is where bold ideas meet seamless execution.
       </motion.p>
-
-      {/* Paragraph card */}
-      {showCard && (
-      <motion.div
-        className="glass-card1"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut", delay: 0.9 }}
-      >
-        <h3>Empowering the Digital Future — One Solution at a Time</h3>
-        <p>
-          Jayaris is where bold ideas meet seamless execution. We are a new-age IT solutions company helping businesses grow, scale, and innovate with cutting-edge digital services.
-          <br />
-          From startups to enterprises, we help brands transform with technology — building high-performing digital products that solve real-world problems.
-        </p>
-      </motion.div>
-)}
     </div>
-  )}
+
+    {/* Glass card wrapper with reserved height */}
+    <div className="glass-card-placeholder">
+      {showCard && (
+        <motion.div
+          className="glass-card1"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.9 }}
+          layout
+        >
+          <h3>Empowering the Digital Future — One Solution at a Time</h3>
+          <p>
+            Jayaris is where bold ideas meet seamless execution. We are a new-age IT solutions company helping businesses grow, scale, and innovate with cutting-edge digital services.
+            <br />
+            From startups to enterprises, we help brands transform with technology — building high-performing digital products that solve real-world problems.
+          </p>
+        </motion.div>
+      )}
+    </div>
+  </div>
 </div>
+
 
 {/* mission */}
 <motion.div

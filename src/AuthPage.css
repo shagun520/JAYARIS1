@@ -1,0 +1,440 @@
+
+.glass-navbar {
+  background-color: rgba(0, 0, 0, 0.7) !important; /* darker and more visible */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.navbar .nav-link {
+  color: #ffffff !important;
+  font-weight: 500;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #606dc5 !important;
+}
+
+.signup-btn {
+  background-color: #33396d;
+  color: #ffffff !important;
+  font-weight: 600;
+  text-transform: lowercase;
+  padding: 4px 12px;
+  border: none !important;
+  border-radius: 8px;
+}
+
+.language-toggle {
+  font-weight: 500;
+  color: white !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.btn-outline-light:hover {
+  background-color: #33396d;
+  color: #ffffff;
+}
+.navbar-brand img {
+  height: 2.9rem; /* Adjust height using rem for responsiveness */
+  width: auto;   /* Maintain aspect ratio */
+  vertical-align: middle; /* Ensure it aligns nicely with text */
+  margin-right: 0.5rem; /* Space between logo and text */
+}
+
+/* You might want to adjust the Navbar.Brand font size if the logo is large */
+.navbar-brand .fw-bold {
+  font-size: 1.5rem; /* Example: adjust brand text size */
+}
+
+/* Adjust for smaller screens if needed */
+@media (max-width: 991.98px) { /* Adjust breakpoint to match your navbar.expand="lg" */
+  .navbar-brand img {
+    height: 1.8rem; /* Slightly smaller logo on mobile */
+    margin-right: 0.3rem;
+  }
+  .navbar-brand .fw-bold {
+    font-size: 1.3rem;
+  }
+}
+/* AuthPage.css */
+
+/* General Body Styling - Dark background */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif; /* Using Inter font */
+  background-color: #1a1a1a; /* Dark background */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Auth Page Wrapper - Full screen background and centering */
+.auth-page-wrapper {
+  min-height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px 20px; /* Padding to account for fixed navbar */
+  background: linear-gradient(135deg, #2a0a4c, #0a0a2a, #2a1648); /* Subtle gradient background */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Auth Container - The main glassmorphic box */
+.auth-container {
+  display: flex;
+  background: linear-gradient(135deg, #0e0e0eaa, #360d477f); /* Semi-transparent background */
+  backdrop-filter: blur(15px); /* Glassmorphism blur */
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Shadow */
+  max-width: 900px; /* Max width for the container on desktop */
+  width: 100%;
+  overflow: hidden; /* Ensures rounded corners are respected */
+  color: #fff;
+  position: relative; /* For glow effect positioning */
+  z-index: 1; /* Ensure it's above any background elements */
+  margin-bottom: 30px;
+}
+
+/* Left Panel Styling (Desktop only) */
+.auth-left-panel {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background: rgba(24, 24, 24, 0.36); /* Slightly darker glass for left panel */
+  border-right: 1px solid rgba(255, 255, 255, 0.05); /* Separator line */
+  /* These will be overridden by media query for mobile */
+}
+
+.auth-left-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Subtle glow for title */
+}
+
+.auth-left-greeting,
+.auth-left-message {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 5px;
+}
+
+/* Right Panel Styling (Form) */
+.auth-right-panel {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  gap: 1.0rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.form-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+/* Glass Inputs */
+.glass-input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.08); /* Light semi-transparent background */
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Subtle border */
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden; /* For glow effect */
+}
+
+.glass-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.glass-input:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 10px rgba(106, 90, 205, 0.5); /* Subtle focus glow */
+}
+
+/* Glass Buttons */
+.glass-button {
+  width: 100%;
+  padding: 12px 15px;
+  background: linear-gradient(45deg, #6a5acd, #350e59); /* Gradient background */
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  position: relative;
+  overflow: hidden; /* For glow effect */
+}
+
+.glass-button:hover {
+  opacity: 0.9;
+  box-shadow: 0 0 20px rgba(106, 90, 205, 0.7); /* Stronger glow on hover */
+  transform: translateY(-2px); /* Slight lift */
+}
+
+/* Google Login Button */
+.google-login-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 12px 25px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px; /* Space from form elements */
+  width: 100%; /* Make it full width like other form elements */
+  position: relative;
+  overflow: hidden; /* For glow effect */
+}
+
+.google-login-button .google-logo {
+  width: 20px;
+  height: 20px;
+}
+
+.google-login-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* Subtle glow on hover */
+}
+
+/* Separator for Google Login */
+.google-login-separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin: 20px 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+.google-login-separator::before,
+.google-login-separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.google-login-separator:not(:empty)::before {
+  margin-right: .25em;
+}
+
+.google-login-separator:not(:empty)::after {
+  margin-left: .25em;
+}
+
+
+/* Switch Links (Forgot Password, Sign Up, Login) */
+.form-row {
+    display: flex;
+    gap: 15px; /* Space between two columns */
+    width: 100%;
+}
+
+/* Container for each input field including its icon */
+.input-group-auth {
+    position: relative;
+    width: 100%;
+    display: flex; /* Aligns icon and input */
+    align-items: center;
+}
+
+/* General styling for inputs in the auth forms (used by signup, can also be used by login) */
+/* This is a general style for inputs that has been refined. */
+.glass-input-auth {
+    width: 100%;
+    padding: 12px 15px; /* Base padding */
+    background: rgba(255, 255, 255, 0.08); /* Lighter transparency for input background */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    padding-left: 45px; /* Space for the icon */
+}
+
+.glass-input-auth:focus {
+    border-color: rgba(145, 174, 255, 0.6); /* Purple/Blue focus */
+    box-shadow: 0 0 0 2px rgba(145, 174, 255, 0.3);
+}
+
+.glass-input-auth::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Styling for icons inside input fields */
+.auth-icon {
+    position: absolute;
+    left: 15px;
+    color: rgba(255, 255, 255, 0.5); /* Icon color */
+    font-size: 1rem;
+    pointer-events: none; /* Allows clicks to pass through to input */
+}
+
+/* Specific position for the eye toggle icon */
+.eye-toggle {
+    right: 15px;
+    left: auto; /* Override left positioning */
+    cursor: pointer;
+    pointer-events: auto; /* Make eye icon clickable */
+}
+
+/* Ensures single column inputs take full width when not in a .form-row */
+.input-group-auth.full-width {
+    width: 100%;
+}
+
+/* Custom select dropdown styling (removes default browser arrow and adds custom one) */
+.custom-select {
+    -webkit-appearance: none; /* Remove default arrow on webkit browsers */
+    -moz-appearance: none;    /* Remove default arrow on mozilla browsers */
+    appearance: none;         /* Remove default arrow */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%23FFF%22%3E%3Cpath%20d%3D%22M7%2010l5%205%205-5z%22%2F%3E%3C%2Fsvg%3E"); /* Custom SVG arrow (white) */
+    background-repeat: no-repeat;
+    background-position: right 15px center; /* Position custom arrow */
+    padding-right: 45px; /* Space for the custom arrow */
+}
+/* Ensures the left icon in a select also has space */
+.input-group-auth .custom-select {
+    padding-left: 45px; /* Space for the left icon */
+}
+
+
+/* Terms & Conditions Checkbox container */
+.terms-checkbox {
+    display: flex;
+    align-items: flex-start; /* Aligns text with checkbox (checkbox at top) */
+    gap: 10px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* Styling for the custom checkbox input */
+.styled-checkbox {
+    -webkit-appearance: none; /* Remove default browser checkbox styles */
+    -moz-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Prevent checkbox from shrinking in flex container */
+    transition: all 0.2s ease;
+}
+
+/* Style when checkbox is checked */
+.styled-checkbox:checked {
+    background-color: #91aeff; /* Purple when checked */
+    border-color: #91aeff;
+}
+
+/* Custom checkmark inside the checkbox when checked */
+.styled-checkbox:checked::after {
+    content: '✔'; /* Checkmark symbol */
+    color: white;
+    font-size: 14px;
+    line-height: 1; /* Adjust line height for vertical centering of checkmark */
+}
+
+/* Styling for "Terms of Service" and "Privacy Policy" links */
+.terms-link {
+    color: #91aeff; /* Purple/Blue link color */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.terms-link:hover {
+    color: #b0c9ff; /* Lighter on hover */
+}
+
+/* "Create Client Account" button with blue and purple gradient */
+.auth-gradient-button {
+    width: 100%;
+    padding: 12px 20px;
+    background: linear-gradient(90deg, #5f5cbd, #91aeff); /* Blue to Purple gradient */
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Space between icon and text */
+}
+
+.auth-gradient-button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Styling for the plus icon inside the button */
+.button-plus-icon {
+    width: 20px;
+    height: 20px;
+    filter: invert(1); /* Makes the SVG white if its base color is black */
+}
+
+/* --- Responsive Adjustments for Sign Up Form --- */
+@media (max-width: 768px) {
+    /* Stack two-column fields vertically on mobile */
+    .form-row {
+        flex-direction: column;
+        gap: 15px; /* Maintain gap between stacked fields */
+    }
+
+    /* Ensure padding for mobile forms */
+    .auth-right-panel {
+        padding: 25px;
+    }
+}

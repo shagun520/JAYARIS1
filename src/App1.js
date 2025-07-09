@@ -11,16 +11,14 @@ import Tilt from "react-parallax-tilt";
 import { Routes, Route } from 'react-router-dom';
 import Services from './Services';
 import AboutUs from './aboutus';
+import AuthPage from './AuthPage';
+import Contact from './Contact';
+import Testimonial from './testimonial.js';
+import Jayaris from './Jayris';
 import { Link } from 'react-router-dom';
 import logoImage from './image/logo.png';
+import ScrollToTop from './ScrollToTop';
 
-import {
-  FaFacebook,
-
-  FaLinkedin,
-
-  FaTwitter
-} from "react-icons/fa";
 import "./App1.css";
 
 import client1 from './image/client1.jpeg';
@@ -179,16 +177,18 @@ const serviceData = [
               <Nav.Link as={Link} to="/">Home</Nav.Link>
               <Nav.Link as={Link} to="/about">About</Nav.Link>
               <Nav.Link as={Link} to="/services">Services</Nav.Link>
-              <Nav.Link href="#blogs">Testimonials</Nav.Link>
-              <Nav.Link href="#contact">Career</Nav.Link>
-              <Nav.Link href="#contact">Contact Us</Nav.Link>
+              <Nav.Link as={Link} to="/testimonials">Testimonials</Nav.Link>
+              <Nav.Link as={Link} to="/career">Career</Nav.Link>
+              <Nav.Link as={Link} to="/contact">Contact Us</Nav.Link>
             </Nav>
 
             {/* Right: Signup + Language - these will also collapse */}
             <div className="d-flex align-items-center gap-3 ms-lg-auto">
-              <Button variant="outline-light" size="sm" className="signup-btn">
-                Signup/Signin
-              </Button>
+              <Link to="/auth" style={{ textDecoration: "none" }}>
+                <Button variant="outline-light" size="sm" className="signup-btn">
+                Login
+                </Button>
+              </Link>
               <Dropdown align="end">
                 <Dropdown.Toggle variant="outline-light" size="sm" className="language-toggle d-flex align-items-center">
                   <span className="me-1">🌐</span> En
@@ -240,7 +240,7 @@ const serviceData = [
     transition={{ duration: 1 }}
   >
     <h2 className="specialization-heading">
-      <span className="animated-text">What sets Us apart?</span>
+      <span className="animated-text">What Sets Us Apart?</span>
     </h2>
   </motion.div>
 
@@ -364,9 +364,8 @@ const serviceData = [
     transition={{ duration: 1, delay: 0.2 }}
   >
     <Typewriter
-      words={["we hear clients are saying something about us..."]}
+      words={["We hear clients are saying something about us..."]}
       loop={1}
-      cursor
       typeSpeed={50}
       deleteSpeed={30}
     />
@@ -410,11 +409,17 @@ const serviceData = [
 }
 export default function App1() {
   return (
+     <>
+      <ScrollToTop />
     <Routes>
       <Route path="/JAYARIS1" element={<HomePage />} /> 
       <Route path="/" element={<HomePage />} />
       <Route path="/services" element={<Services />} />
       <Route path="/about" element={<AboutUs />} />
+      <Route path="/auth" element={<AuthPage />} />
+      <Route path="/testimonials" element={<Testimonial />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/career" element={<Jayaris />} />
        {/* Add more routes for your footer links that go to separate pages */}
           <Route path="/career" element={<p>Career Page Placeholder</p>} />
           <Route path="/testimonials" element={<p>Testimonials Page Placeholder</p>} />
@@ -425,6 +430,6 @@ export default function App1() {
           <Route path="/cookie-policy" element={<p>Cookie Policy Page Placeholder</p>} />
           <Route path="/sitemap" element={<p>Sitemap Page Placeholder</p>} />
     </Routes>
-    
+    </>
   );
 }

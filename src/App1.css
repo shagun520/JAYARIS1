@@ -14,15 +14,14 @@ a {
 }
 
 .glass-navbar {
-  
-  background: rgba(0, 0, 0, 0.3) !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  z-index: 9999; /* must be higher than the video */
-  position: fixed; /* stays on top */
+  background-color: rgba(0, 0, 0, 0.7) !important; /* darker and more visible */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  position: fixed;
   top: 0;
   width: 100%;
+  z-index: 9999;
 }
 
 .navbar .nav-link {
@@ -133,7 +132,7 @@ a {
   text-align: center;
   margin-bottom: 1.0 rem;
   /* Gradient text magic */
-  background: linear-gradient(90deg, #37304ddb, #525354);
+  background: linear-gradient(90deg, #c6b8f5f5, #add6ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -405,7 +404,7 @@ a {
 
 /* Call to Action */
 .call-to-action {
-  background: linear-gradient(to bottom, #220b34,#120c19);
+  background: linear-gradient(to bottom, #000000,#0d0d1e);
 
 }
 .call-to-action h2 {

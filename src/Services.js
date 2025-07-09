@@ -7,6 +7,7 @@ import React, { useState, useRef, useLayoutEffect, useCallback, useMemo, useEffe
 import logoImage from './image/logo.png';
 import Footer from './components/Footer'; 
 import './components/Footer.css'; 
+
 import { useLocation } from 'react-router-dom';
 const servicesData = [
   { title: "Web Development", description: "We build fast, secure, and beautifully designed websites that make you stand out online." },
@@ -233,16 +234,18 @@ const Services = () => {
               <Nav.Link as={Link} to="/">Home</Nav.Link>
               <Nav.Link as={Link} to="/about">About</Nav.Link>
               <Nav.Link as={Link} to="/services">Services</Nav.Link>
-              <Nav.Link href="#blogs">Testimonials</Nav.Link>
+              <Nav.Link as={Link} to="/testimonials">Testimonials</Nav.Link>
               <Nav.Link href="#contact">Career</Nav.Link>
               <Nav.Link href="#contact">Contact Us</Nav.Link>
             </Nav>
 
             {/* Right: Signup + Language - these will also collapse */}
             <div className="d-flex align-items-center gap-3 ms-lg-auto">
-              <Button variant="outline-light" size="sm" className="signup-btn">
-                Signup/Signin
-              </Button>
+              <Link to="/auth" style={{ textDecoration: "none" }}>
+                <Button variant="outline-light" size="sm" className="signup-btn">
+                  Login
+                </Button>
+              </Link>
               <Dropdown align="end">
                 <Dropdown.Toggle variant="outline-light" size="sm" className="language-toggle d-flex align-items-center">
                   <span className="me-1">🌐</span> En

@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(135deg, #030320, #505691);
+  background: linear-gradient(135deg, #17174e, #240d39);
   background-size: cover;          /* Makes the image cover the entire area */
   background-repeat: no-repeat;    /* Prevents tiling */
   background-position: center;     /* Centers the image */
@@ -8,7 +8,7 @@ body {
   padding: 0;
 }
 .glass-navbar { 
-  background: rgba(0, 0, 0, 0.3) !important;
+ background-color: rgba(0, 0, 0, 1) !important;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -75,7 +75,15 @@ body {
     font-size: 1.3rem;
   }
 }
- /* about us */
+
+/* Remove margin-bottom from the logo. Rely on gap on parent instead. */
+.jayaris-logo-about {
+  width: 300px;
+  height: auto;
+  margin-top: -6.5rem;
+  /* margin-bottom: 15px; /* ❌ REMOVE OR COMMENT OUT THIS LINE */
+}
+
 .aboutus-section {
   display: flex;
   justify-content: space-between;
@@ -84,6 +92,7 @@ body {
   min-height: 100vh;
   color: white;
 }
+
 .left-stack {
   flex: 1;
   display: flex;
@@ -94,6 +103,7 @@ body {
   min-height: 200px; /* Ensures space is preserved */
   gap: 0.5rem;
 }
+
 .stack-line {
   background: linear-gradient(to right, #5f5cbd, #91aeff);
   -webkit-background-clip: text;
@@ -101,39 +111,50 @@ body {
 }
 
 .right-section {
-    margin-top: 200px;
+  margin-top: 200px;
   flex: 2;
   display: flex;
   flex-direction: column;
   justify-content: center; /* vertical centering */
   align-items: center;     /* horizontal centering */
-  gap: 1rem;
-}
-
-.brand-title {
-  text-align: center;
-  margin-bottom: 0.5rem;
-}
-
-.jayaris-title {
-  font-size: 3.5rem;
-  font-weight: bold;
-  color: rgb(212, 230, 255);
-
+  gap: 1rem; /* This provides a consistent 16px spacing between elements */
 }
 
 .jayaris-tagline {
-  font-size: 1.2rem;
+  /* Add these CSS properties to match Framer Motion's initial state */
+  opacity: 0;             /* Ensures it's invisible from the start */
+  transform: translateY(20px); /* Puts it at the animation's starting Y position */
+  /* This prevents the "flash" at y:0 before animation */
+
+  font-size: 1.5rem;
   font-weight: 400;
   color: rgb(255, 255, 255);
-}
-.glass-card1 {
   text-align: center;
-  font-size: 1.06rem;
-  color: rgb(251, 254, 255);
-  max-width: 750px;
+  /* ❌ REMOVE margin-top: -18px; (if it's still there from previous iterations) */
+}
+.tagline-placeholder {
+  min-height: 30px; /* decrease from 40px */
+  margin-top: -0.9rem; /* optional: tighten space after logo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.glass-card1 {
+  text-align: center;
+  font-size: 1.09rem;
+  color: rgb(251, 254, 255);
+  max-width: 750px;
+  /* Consider adding opacity: 0; transform: translateY(20px); here as well
+     if it also shows a jump before its animation begins */
+}
+.glass-card-placeholder {
+  min-height: 180px; /* tighten space if card isn't very tall */
+  margin-top: -0.8rem; /* optional: reduce space after tagline */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 {/* mission */}
 
 .mission-section {
